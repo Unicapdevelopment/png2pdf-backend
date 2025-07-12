@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload PDF</title>
+</head>
+<body>
+  <h2>Upload PDF file to convert to PNG (all pages)</h2>
+  <form action="http://127.0.0.1:5001/convert" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept="application/pdf" required>
+    <button type="submit">Upload and Convert</button>
+  </form>
+</body>
+</html>
