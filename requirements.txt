@@ -2,3 +2,4 @@ flask
 flask-cors
 firebase-admin
 pdf2image
+gunicorn
