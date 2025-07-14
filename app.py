@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import tempfile, os
+import json
 from pdf2image import convert_from_path
 import firebase_admin
 from firebase_admin import credentials, storage
@@ -9,7 +10,8 @@ app = Flask(__name__)
 CORS(app)
 
 # ─── Firebase Admin init ──────────────────────────────────────────
-cred = credentials.Certificate("serviceAccountKey.json")
+service_account_info = json.loads(os.environ['SERVICE_ACCOUNT_KEY'])
+cred = credentials.Certificate(service_account_info)
 firebase_admin.initialize_app(cred, {
     "storageBucket": "universe-capital-crm.appspot.com"
 })
